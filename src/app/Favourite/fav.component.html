@@ -1,0 +1,27 @@
+
+
+
+<div  class="container" >
+         
+ <ul class="jumbotron" *ngFor="let val of getFavMovie1">
+   <div class="row ">
+   <div class="col-sm-4 well container">  
+    <li><img class="img-responsive center-block" src="http://image.tmdb.org/t/p/w92{{val.poster_path}}"/></li></div>
+   
+  <div class="col-sm-8 container">
+<li><h3>{{val.title}}</h3></li>
+<li><span class="glyphicon glyphicon-calendar"></span>Release_date:  {{val.release_date}}</li>
+<!--<li>Gener:{{getGenre(val.genre_ids)}}</li>-->
+<!--<button class="btn btn-success button" (click)="this.favcomp.onGetFavourite(val)">Add to Fav</button>-->
+<button class="btn btn-success button" (click)="onDelete(val.id)">Delete</button>
+
+<!--<li>Popularity: {{val.popularity}}</li>-->
+<li>Overview:  {{val.overview}}</li>
+
+  </div>
+   </div>
+  </ul>
+ </div>
+
+
+

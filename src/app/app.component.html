@@ -1,17 +1,7 @@
-<body>
-<div class="container-fluid">
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-     <h1 class="heading">{{title}}</h1>
-    </div>
-    </div>
-</nav>
-
-
-
-<!--<p>{{values}}</p>-->
-<div class="well container"><input (keyup)="onKey($event)"><button (click)="onTestget(values)">Search</button>
+<div class="well container">
+  <!--<input (keyup)="this.onKey($event)"><button (click)="onTestGet(values)">Search</button>-->
+<input (keyup)="onKey($event)" id="input-textbox-align">
+       <button class="btn btn-primary" (click)="onTestget(values)"><span class="glyphicon glyphicon-search"></span></button>
 </div>
  
 <div  class="container" infinite-scroll   [infiniteScrollDistance]="20"  [infiniteScrollThrottle]="5000"
@@ -20,31 +10,33 @@
  <ul class="jumbotron" *ngFor="let val of getdata">
    <div class="row ">
    <div class="col-sm-4 well container">  
-    <li><img class="img-responsive center-block " src="http://image.tmdb.org/t/p/w92{{val.poster_path}}"/></li></div>
+    <li><img class="img-responsive center-block" src="http://image.tmdb.org/t/p/w92{{val.poster_path}}"/></li></div>
    
   <div class="col-sm-8 container">
-<li><h3>{{val.title}}</h3></li>
-<li>Release_date:  {{val.release_date}}</li>
-<li>Popularity: {{val.popularity}}</li>
-<li>Overview:  {{val.overview}}</li>
+<li><h3><em>{{val.title}}</em></h3></li>
+<li><span class="glyphicon glyphicon-calendar"></span>Release_date:  {{val.release_date}}</li>
 <li>Gener:{{getGenre(val.genre_ids)}}</li>
+<button class="btn btn-success button" (click)="this.favcomp.onGetFavourite(val)">Add to Fav</button>
+<!--<button class="btn btn-success button" (click)="onDelete(id)">Delete</button>-->
+
+<!--<li>Popularity: {{val.popularity}}</li>-->
+<li>Overview:  {{val.overview}}</li>
+
   </div>
    </div>
   </ul>
- </div>
- </div>
-</body>
-  <!--<p>{{getdata}}</p><br>-->
+ </div>`
 
 
-<!--<ul *ngFor="let empleyee of employees">
- <li>{{empleyee.name}}</li>
-</ul>-->
-<!--<text> </text><button>Search</button>
-<ul *ngFor="let empleyee of employees">
+
+
+
+
+
+
+
+
+
 
   
-</ul>-->
-
- <!-- <button>Test  post</button><br>
-  <p>output:{{postData}}</p><br>-->
+  
